@@ -16,8 +16,6 @@ services:
   web:
     container_name: progress
     build: ./
-    volumes:
-      - ./source:/src
     ports:
       - "8000:8000"
     restart: always
