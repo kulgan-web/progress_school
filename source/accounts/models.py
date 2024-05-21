@@ -20,14 +20,14 @@ class User(AbstractUser):
                             default=AccoutTypeChoices.USER
                             )
     
-    object = UserManager()
-    user_set = CustomUserManager()
+    #object = UserManager()
+    #user_set = CustomUserManager()
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
     def save(self, *args, **kwargs):
-        if self.role == AccoutTypeChoices.TEACHER:
+        if self.role == AccoutTypeChoices.TEACHER or self.is_superuser == True:
             self.is_staff = True
         else:
             self.is_staff = False
