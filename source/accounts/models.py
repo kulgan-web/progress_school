@@ -20,8 +20,8 @@ class User(AbstractUser):
                             default=AccoutTypeChoices.USER
                             )
     
-    #object = UserManager()
-    #user_set = CustomUserManager()
+    object = UserManager()
+    user_set = CustomUserManager()
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
