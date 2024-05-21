@@ -27,7 +27,7 @@ class User(AbstractUser):
         return f'{self.first_name} {self.last_name}'
 
     def save(self, *args, **kwargs):
-        if self.role == AccoutTypeChoices.TEACHER or self.is_superuser == True:
+        if self.role == AccoutTypeChoices.TEACHER:
             self.is_staff = True
         else:
             self.is_staff = False
