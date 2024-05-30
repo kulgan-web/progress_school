@@ -4,7 +4,7 @@ services:
   db_1:
     container_name: db_1
     ports:
-      - "5432:5432"
+      - "5433:5432"
     image: postgres:14.3
     restart: always
     env_file:
